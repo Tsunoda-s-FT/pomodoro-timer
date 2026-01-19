@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ===== ダークモード（デフォルト） ===== */
+  --background-base: hsl(222, 47%, 11%);
+  --background-elevated: hsl(217, 33%, 17%);
+  --background-surface: hsla(0, 0%, 100%, 0.05);
+
+  --text-primary: hsla(0, 0%, 100%, 0.90);
+  --text-secondary: hsla(0, 0%, 100%, 0.70);
+  --text-tertiary: hsla(0, 0%, 100%, 0.50);
+  --text-muted: hsla(0, 0%, 100%, 0.30);
+
+  --border-subtle: hsla(0, 0%, 100%, 0.10);
+  --border-default: hsla(0, 0%, 100%, 0.20);
+
+  /* UI要素 */
+  --surface-bg: hsla(0, 0%, 100%, 0.05);
+  --surface-hover: hsla(0, 0%, 100%, 0.10);
+  --input-bg: hsla(0, 0%, 100%, 0.05);
+  --input-border: hsla(0, 0%, 100%, 0.10);
+  --input-border-focus: hsla(0, 0%, 100%, 0.30);
+  --button-bg: hsla(0, 0%, 100%, 0.10);
+  --button-hover: hsla(0, 0%, 100%, 0.20);
+  --option-bg: hsl(217, 33%, 17%);
+
+  /* 作業モード（赤） */
+  --work-primary: hsl(0, 86%, 65%);
+  --work-secondary: hsl(0, 72%, 51%);
+  --work-bg-from: hsl(0, 18%, 10%);
+  --work-bg-via: hsl(0, 15%, 12%);
+  --work-bg-to: hsl(0, 18%, 10%);
+
+  /* 短い休憩（緑） */
+  --short-break-primary: hsl(140, 70%, 55%);
+  --short-break-secondary: hsl(140, 65%, 48%);
+  --short-break-bg-from: hsl(140, 12%, 10%);
+  --short-break-bg-via: hsl(140, 10%, 12%);
+  --short-break-bg-to: hsl(140, 12%, 10%);
+
+  /* 長い休憩（青） */
+  --long-break-primary: hsl(210, 85%, 60%);
+  --long-break-secondary: hsl(210, 80%, 52%);
+  --long-break-bg-from: hsl(210, 18%, 10%);
+  --long-break-bg-via: hsl(210, 15%, 12%);
+  --long-break-bg-to: hsl(210, 18%, 10%);
+
+  /* 緊急度エフェクト用 */
+  --urgency-saturation-max: 50;
+  --urgency-lightness-delta: 8;
+
+  /* 警告色 */
+  --warning-color: hsl(0, 84%, 60%);
+}
+
+/* ===== ライトモード（目に優しいウォームトーン + 高コントラスト） ===== */
+.light {
+  /*
+   * 背景: ウォームなベージュ/セピア調（やや濃いめ）
+   * テキストとのコントラストを確保しつつ、目に優しい色
+   */
+  --background-base: hsl(45, 20%, 85%);
+  --background-elevated: hsl(45, 18%, 90%);
+  --background-surface: hsla(40, 20%, 40%, 0.10);
+
+  /* テキスト: 十分な濃さで可読性を確保 */
+  --text-primary: hsl(30, 30%, 15%);
+  --text-secondary: hsl(30, 20%, 28%);
+  --text-tertiary: hsl(30, 15%, 42%);
+  --text-muted: hsl(30, 10%, 55%);
+
+  --border-subtle: hsla(30, 20%, 30%, 0.15);
+  --border-default: hsla(30, 20%, 30%, 0.25);
+
+  /* UI要素（ライトモード） */
+  --surface-bg: hsla(30, 20%, 30%, 0.08);
+  --surface-hover: hsla(30, 20%, 30%, 0.12);
+  --input-bg: hsla(30, 20%, 30%, 0.06);
+  --input-border: hsla(30, 20%, 30%, 0.15);
+  --input-border-focus: hsla(30, 20%, 30%, 0.30);
+  --button-bg: hsla(30, 20%, 30%, 0.10);
+  --button-hover: hsla(30, 20%, 30%, 0.18);
+  --option-bg: hsl(45, 20%, 92%);
+
+  /* 作業モード（濃いテラコッタ - 背景とのコントラスト確保） */
+  --work-primary: hsl(8, 60%, 40%);
+  --work-secondary: hsl(8, 55%, 35%);
+  --work-bg-from: hsl(30, 25%, 82%);
+  --work-bg-via: hsl(35, 22%, 84%);
+  --work-bg-to: hsl(30, 25%, 82%);
+
+  /* 短い休憩（濃いフォレストグリーン - しっかり見える濃さ） */
+  --short-break-primary: hsl(150, 50%, 28%);
+  --short-break-secondary: hsl(150, 45%, 24%);
+  --short-break-bg-from: hsl(90, 15%, 82%);
+  --short-break-bg-via: hsl(70, 12%, 84%);
+  --short-break-bg-to: hsl(90, 15%, 82%);
+
+  /* 長い休憩（濃いネイビー/スレートブルー） */
+  --long-break-primary: hsl(210, 50%, 35%);
+  --long-break-secondary: hsl(210, 45%, 30%);
+  --long-break-bg-from: hsl(50, 18%, 82%);
+  --long-break-bg-via: hsl(55, 15%, 84%);
+  --long-break-bg-to: hsl(50, 18%, 82%);
+
+  /* ライトモードでは緊急度をさらに控えめに */
+  --urgency-saturation-max: 25;
+  --urgency-lightness-delta: -3;
+
+  /* 警告色（濃いアンバー） */
+  --warning-color: hsl(25, 75%, 40%);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--background-base);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* タイマーのアニメーション */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* 円形プログレスバーのトランジション */
+.progress-ring {
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/* カスタムカラー */
+@theme {
+  --color-tomato-400: #ff6b6b;
+  --color-tomato-500: #ee5a5a;
+  --color-tomato-600: #dc4848;
+  --color-forest-400: #51cf66;
+  --color-forest-500: #40c057;
+  --color-forest-600: #37b24d;
+}
+
+/* ===== 時間認識（Time Awareness）エフェクト ===== */
+
+/* リマインダートーストのスライドイン */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}
+
+/* 警告ボーダーのパルス */
+@keyframes pulse-border {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
