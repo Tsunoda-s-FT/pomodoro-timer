@@ -1,5 +1,7 @@
 # Pomodoro Timer
 
+[![CI](https://github.com/Tsunoda-s-FT/pomodoro-timer/actions/workflows/ci.yml/badge.svg)](https://github.com/Tsunoda-s-FT/pomodoro-timer/actions/workflows/ci.yml)
+
 モダンなポモドーロタイマーアプリケーション。CLI、Web UI、デーモンモードをサポートし、複数のクライアント間でリアルタイム同期が可能です。
 
 ## 特徴
@@ -67,14 +69,14 @@
 
 ### 必要要件
 
-- Node.js 18.0.0 以上
+- Node.js 20.0.0 以上
 - npm 9.0.0 以上
 
 ### セットアップ
 
 ```bash
 # リポジトリをクローン
-git clone <repository-url>
+git clone https://github.com/Tsunoda-s-FT/pomodoro-timer.git
 cd pomodoro-timer
 
 # 依存関係をインストール

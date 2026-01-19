@@ -3,6 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tsunoda-s-FT/pomodoro-timer.git"
+  },
+  "homepage": "https://github.com/Tsunoda-s-FT/pomodoro-timer#readme",
+  "bugs": {
+    "url": "https://github.com/Tsunoda-s-FT/pomodoro-timer/issues"
+  },
   "workspaces": [
     "packages/*"
   ],
